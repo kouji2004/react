@@ -4,7 +4,7 @@ export const Todo = ({todo}) => {
   return (
     <div>
       <label>
-        <input type="checkbox"></input>
+        <input type="checkbox" checked={todo.completed} readOnly></input>
       </label>
       {todo.name}
       </div>
