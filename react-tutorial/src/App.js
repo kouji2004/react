@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import './App.css';
 import TodoList from './TodoList';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [todos,setTodos] = useState([
@@ -13,7 +14,7 @@ const handleAppTodo = () =>{
   //タスクを追加するする
 const name = todoNameRef.current.value
 setTodos((prevTodos)=>{
-  return[...prevTodos,{id:1, name:name,completed: false}];
+  return[...prevTodos,{id:uuidv4(), name:name,completed: false}];
 });
 todoNameRef.current.value = null;
 };
